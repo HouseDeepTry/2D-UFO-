@@ -30,6 +30,7 @@ public class PlayerController : MonoBehaviour
         Vector2 movement = new Vector2(MoveHorizontal,MoveVertical);
         Rbd.AddForce(movement*Speed);
     }
+    //collision
     private void OnTriggerEnter2D(Collider2D other)
     {
         if(other.gameObject.CompareTag("PickUp"))
@@ -37,6 +38,10 @@ public class PlayerController : MonoBehaviour
             other.gameObject.SetActive(false);
             count += 1;
             SetCountText();
+        }
+        if(other.gameObject.CompareTag("Background"))
+        {
+            Application.LoadLevel(Application.loadedLevel);
         }
     }
     void SetCountText()

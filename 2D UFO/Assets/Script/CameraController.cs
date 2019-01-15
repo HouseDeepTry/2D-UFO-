@@ -19,4 +19,12 @@ public class CameraController : MonoBehaviour
     {
         transform.position = Main.transform.position + offset;
     }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.gameObject.CompareTag("PickUp"))
+        {
+            other.gameObject.SetActive(false);
+        }
+    }
 }

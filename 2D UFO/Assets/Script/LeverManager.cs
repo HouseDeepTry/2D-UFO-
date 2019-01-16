@@ -5,6 +5,7 @@ using UnityEngine;
 public class LeverManager : MonoBehaviour
 {
     public GameObject Panel;
+
     //Scene
     private void Start()
     {
@@ -35,4 +36,5 @@ public class LeverManager : MonoBehaviour
         Panel.gameObject.SetActive(true);
         Time.timeScale = 0;
     }
+
 }

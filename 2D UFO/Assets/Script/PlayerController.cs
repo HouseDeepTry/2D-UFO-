@@ -54,6 +54,7 @@ public class PlayerController : MonoBehaviour
         if(count>=winscore)
         {
             WinText.text = "you win";
+            Time.timeScale = 0;
         }
     }
 }

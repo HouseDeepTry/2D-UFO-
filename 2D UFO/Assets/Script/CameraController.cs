@@ -1,9 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CameraController : MonoBehaviour
 {
+
     public GameObject Main;
 
     private Vector3 offset;
@@ -12,6 +14,7 @@ public class CameraController : MonoBehaviour
     void Start()
     {
         offset = transform.position - Main.transform.position;
+
     }
 
     // Update is called once per frame
@@ -27,4 +30,5 @@ public class CameraController : MonoBehaviour
             other.gameObject.SetActive(false);
         }
     }
+    
 }

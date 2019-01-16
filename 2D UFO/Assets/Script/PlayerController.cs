@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
+    private GameObject gameControler;//để hiện panel khi cần
+
     public float Speed;
     public int winscore;
 
@@ -15,12 +17,14 @@ public class PlayerController : MonoBehaviour
     public Text countText;
     public Text WinText;
 
+
     private void Start()
     {
         Rbd = GetComponent<Rigidbody2D>();
         count = 0;
         SetCountText();
         WinText.text = "";
+        gameControler = GameObject.FindGameObjectWithTag("GameController");
     }
     private void FixedUpdate()
     {
@@ -41,7 +45,7 @@ public class PlayerController : MonoBehaviour
         }
         if(other.gameObject.CompareTag("Background"))
         {
-            Application.LoadLevel(Application.loadedLevel);
+            gameControler.GetComponent<LeverManager>().AppPanel();
         }
     }
     void SetCountText()
